@@ -1,92 +1,64 @@
-/* styles.css */
-
-/* 全局样式 */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 页面内容水平居中 */
+/* Academic layout inspired by the AcademicPages reference site. */
+:root { color-scheme: light; --text: #494e52; --muted: #727b82; --link: #237f99; --border: #eceeef; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; background: #fff; color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: 18px; line-height: 1.65; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.skip-link { position: absolute; left: 16px; top: -80px; padding: 10px; background: white; z-index: 10; }
+.skip-link:focus { top: 8px; }
+.masthead { border-bottom: 1px solid var(--border); }
+.nav-wrap { max-width: 1280px; margin: auto; padding: 22px 32px; display: flex; gap: 36px; align-items: center; }
+.nav-wrap a { color: var(--muted); font-size: 18px; }
+.nav-wrap .site-title { font-weight: 700; margin-right: 20px; }
+.page-layout { max-width: 1280px; margin: 42px auto 64px; padding: 0 32px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 58px; }
+.author-profile { align-self: start; position: sticky; top: 30px; font-size: 14px; line-height: 1.5; }
+.profile-photo { width: 175px; height: 175px; object-fit: cover; border-radius: 50%; border: 1px solid var(--border); padding: 5px; }
+.author-details h2 { margin: 14px 0 8px; font-size: 19px; line-height: 1.3; border: 0; }
+.author-bio { margin: 0 0 14px; }
+.affiliation { margin: 8px 0; }
+.profile-links { list-style: none; margin: 18px 0 0; padding: 0; }
+.profile-links li { margin: 6px 0; }
+.profile-links a { color: var(--text); }
+.profile-links span { display: inline-block; width: 22px; color: var(--muted); }
+main { min-width: 0; max-width: 920px; }
+section { margin-bottom: 38px; }
+h2 { font-size: 25px; line-height: 1.3; margin: 0 0 18px; padding-bottom: 9px; border-bottom: 1px solid var(--border); }
+#about h2 { font-size: 29px; border-bottom: 0; padding-bottom: 0; }
+p { margin: 0 0 18px; }
+h3 { font-size: 18px; line-height: 1.55; margin: 0 0 5px; font-weight: 600; }
+ul { padding-left: 23px; margin: 0; }
+li { margin-bottom: 18px; padding-left: 2px; }
+li p { margin-bottom: 0; }
+.year { font-size: 21px; margin: 22px 0 16px; }
+.publication-list li { margin-bottom: 24px; }
+.publication-list h3 { font-weight: 600; }
+.publication-list p { font-size: 16px; line-height: 1.65; }
+footer { background: #f2f3f3; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+.footer-wrap { max-width: 1280px; margin: auto; padding: 30px 32px; }
+@media (max-width: 900px) {
+ .page-layout { grid-template-columns: 180px minmax(0, 1fr); gap: 30px; padding: 0 24px; }
+ .profile-photo { width: 150px; height: 150px; }
+ .nav-wrap { padding: 20px 24px; gap: 24px; }
+ body { font-size: 16px; }
 }
-.container {
-    max-width: 800px; /* 设置最大宽度 */
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: left; /* 容器内文字左对齐 */
+@media (max-width: 640px) {
+ .nav-wrap { padding: 17px 20px; gap: 18px; flex-wrap: wrap; }
+ .nav-wrap a { font-size: 14px; }
+ .nav-wrap .site-title { margin-right: 0; }
+ .page-layout { display: block; margin-top: 26px; padding: 0 20px; }
+ .author-profile { position: static; display: flex; align-items: flex-start; gap: 20px; margin-bottom: 32px; }
+ .profile-photo { width: 100px; height: 100px; flex-shrink: 0; }
+ .author-details h2 { margin-top: 0; font-size: 18px; }
+ .author-profile { font-size: 12px; }
+ .author-bio { margin-bottom: 8px; }
+ .profile-links { display: flex; gap: 16px; margin-top: 10px; }
+ .profile-links li { margin: 0; }
+ h2 { font-size: 23px; }
+ #about h2 { font-size: 26px; }
+ h3 { font-size: 16px; }
+ .publication-list p { font-size: 14px; }
+ .footer-wrap { padding: 24px 20px; }
 }
-header, section, footer {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* 容器水平居中 */
-}
-header {
-    background-color: #f8f9fa;
-    padding: 20px 0;
-}
-footer {
-    background-color: #f8f9fa;
-    padding: 10px 0;
-    margin-top: 20px;
-}
-h1, h2, h3 {
-    margin: 0;
-}
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-/* 标题样式 */
-h1 {
-    color: #003366; /* 深蓝色 */
-    position: relative; /* 为下划线定位 */
-    padding-bottom: 10px; /* 标题与下划线的间距 */
-}
-h1::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px; /* 下划线高度 */
-    background-color: #003366; /* 下划线颜色 */
-}
-
-/* 其他标题样式 */
-h2 {
-    color: #003366; /* 深蓝色 */
-    position: relative; /* 为下划线定位 */
-    padding-bottom: 10px; /* 标题与下划线的间距 */
-}
-h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px; /* 下划线高度 */
-    background-color: #003366; /* 下划线颜色 */
-}
-
-/* styles.css */
-
-/* 头部内容布局 */
-.header-content {
-    display: flex;
-    align-items: center; /* 垂直居中 */
-    gap: 20px; /* 照片与文字之间的间距 */
-}
-
-/* 照片样式 */
-.profile-photo {
-    width: 120px; /* 设置照片宽度 */
-    height: 120px; /* 设置照片高度 */
-    border-radius: 50%; /* 圆形照片 */
-    object-fit: cover; /* 保持照片比例 */
-    border: 3px solid #003366; /* 添加边框 */
-}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
