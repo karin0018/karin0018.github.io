@@ -39,3 +39,27 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+/* Wider desktop profile and reading area. */
+@media (min-width: 925px) {
+  #main {
+    max-width: 1440px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  #main > .sidebar {
+    width: 260px;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  #main > .page {
+    width: calc(100% - 308px);
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+  }
+  .masthead__inner-wrap {
+    max-width: 1440px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
