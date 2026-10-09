@@ -1,0 +1,46 @@
+locale: en-US
+title: Rui Lv
+title_separator: "-"
+name: Rui Lv
+description: "Rui Lv (吕瑞), PhD candidate at USTC and visiting student at NTU. Knowledge-driven model reasoning."
+url: https://karin0018.github.io
+baseurl: ""
+repository: karin0018/karin0018.github.io
+future: true
+breadcrumbs: false
+read_more: disabled
+words_per_minute: 160
+timezone: Asia/Singapore
+author:
+  name: "Rui Lv (吕瑞)"
+  avatar: "profile.jpg"
+  bio: 'PhD Candidate in <a href="https://www.ustc.edu.cn/">USTC</a><br>Visiting in <a href="https://www.ntu.edu.sg/">NTU</a>'
+  email: lvrui2018@mail.ustc.edu.cn
+  github: karin0018
+  googlescholar: https://scholar.google.com/citations?user=MIHfsngAAAAJ&hl=en
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+sass:
+  sass_dir: _sass
+  style: compressed
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-redirect-from
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - node_modules
+  - vendor
+  - source/styles.css
+  - source/scripts.js
+  - source/github.svg
+  - source/google-scholar.svg
+  - assets/js/plugins
+  - assets/js/vendor
+  - assets/js/_main.js
