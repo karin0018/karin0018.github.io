@@ -6,7 +6,7 @@ description: "Rui Lv (吕瑞), PhD candidate at USTC and visiting student at NTU
 url: https://karin0018.github.io
 baseurl: ""
 repository: karin0018/karin0018.github.io
-future: true
+future: false
 breadcrumbs: false
 read_more: disabled
 words_per_minute: 160
@@ -35,6 +35,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - docs
   - LICENSE
   - node_modules
   - vendor
@@ -45,3 +46,13 @@ exclude:
   - assets/js/plugins
   - assets/js/vendor
   - assets/js/_main.js
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: blog
+      author_profile: false
+      permalink: /blog/:title/
+      author: Rui Lv

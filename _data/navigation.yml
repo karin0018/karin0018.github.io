@@ -7,3 +7,5 @@ main:
     url: /#education
   - title: "Awards"
     url: /#awards
+  - title: "Blog"
+    url: /blog/

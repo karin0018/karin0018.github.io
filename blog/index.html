@@ -1,0 +1,19 @@
+---
+layout: blog
+title: Blog
+excerpt: "Paper reading notes, research ideas, and technical explorations by Rui Lv."
+permalink: /blog/
+---
+<p>Notes on papers, model reasoning, knowledge graphs, and LLM agents.</p>
+{% if site.posts.size > 0 %}
+  {% for post in site.posts %}
+  <article class="blog-entry">
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p class="page__meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>{% if post.tags.size > 0 %} · {{ post.tags | join: " · " }}{% endif %}</p>
+    {{ post.excerpt | markdownify }}
+    <a href="{{ post.url | relative_url }}">Read more →</a>
+  </article>
+  {% endfor %}
+{% else %}
+<p class="blog-empty">No posts yet. Reading notes and research reflections are coming soon.</p>
+{% endif %}

@@ -39,3 +39,12 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+/* Blog reading layout, independent of the academic homepage columns. */
+.blog-content { max-width: 800px; margin: 0 auto; }
+.blog-entry { padding: 1.5em 0; border-bottom: 1px solid #eceeef; }
+.blog-entry h2 { margin-top: 0; }
+.blog-empty { margin-top: 2em; color: #727b82; }
+.blog-back { margin-top: 3em; padding-top: 1em; border-top: 1px solid #eceeef; }
+.blog-content img { max-width: 100%; height: auto; }
+.blog-content pre { overflow-x: auto; }
